@@ -1,0 +1,1518 @@
+  [1m[35m (41.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `appstreet_product` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE `appstreet_test_product` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (242.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (270.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT GET_LOCK('6391644616934626140', 0)[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProducts (20190407001112)
+  [1m[35m (337.6ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` text, `uniq_id` varchar(255), `name` varchar(255), `sale_msg` varchar(255), `sale_price` float(24) DEFAULT 0.0, `images` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190407001112_create_products.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (21.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190407001112')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (56.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProductAttributes (20190407053025)
+  [1m[35m (403.6ms)[0m  [1m[35mCREATE TABLE `product_attributes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `uniq_id` int, `name` varchar(255), `product_id` bigint NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_product_attributes_on_product_id`  (`product_id`))[0m
+  ↳ db/migrate/20190407053025_create_product_attributes.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190407053025')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (105.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProductAttributeOptions (20190407053059)
+  [1m[35m (435.1ms)[0m  [1m[35mCREATE TABLE `product_attribute_options` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `uniq_id` int, `name` varchar(255), `product_attribute_id` bigint NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_product_attribute_options_on_product_attribute_id`  (`product_attribute_id`))[0m
+  ↳ db/migrate/20190407053059_create_product_attribute_options.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190407053059')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-04-07 05:37:48', '2019-04-07 05:37:48')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (44.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('6391644616934626140')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'iPhoneX', '10% OFF', 5000.0, '2019-04-07 05:57:55', '2019-04-07 05:57:55')[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6391644616934626140', 0)[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProducts (20190407001112)
+  [1m[35m (168.1ms)[0m  [1m[35mDROP TABLE `products`[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (76.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190407001112'[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6391644616934626140')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('6391644616934626140', 0)[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProductAttributeOptions (20190407053059)
+  [1m[35m (132.0ms)[0m  [1m[35mDROP TABLE `product_attribute_options`[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (32.7ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190407053059'[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6391644616934626140')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6391644616934626140', 0)[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProducts (20190407001112)
+  [1m[35m (247.8ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` text, `uniq_id` varchar(255), `name` varchar(255), `sale_msg` varchar(255), `sale_price` float(24) DEFAULT 0.0, `mark_price` float(24) DEFAULT 0.0, `images` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190407001112_create_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190407001112')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (68.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProductAttributeOptions (20190407053059)
+  [1m[35m (297.9ms)[0m  [1m[35mCREATE TABLE `product_attribute_options` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `uniq_id` int, `name` varchar(255), `product_attribute_id` bigint NOT NULL, `price` float(24) DEFAULT 0.0, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_product_attribute_options_on_product_attribute_id`  (`product_attribute_id`))[0m
+  ↳ db/migrate/20190407053059_create_product_attribute_options.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190407053059')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6391644616934626140')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'iPhoneX', '10% OFF', 4000.0, '2019-04-07 06:46:48', '2019-04-07 06:46:48')[0m
+  [1m[35m (62.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m
+  [1m[35m (25.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  `products`.* FROM `products` ORDER BY `products`.`id` ASC LIMIT 1[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  `products`.* FROM `products` ORDER BY `products`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` ORDER BY `products`.`id` ASC LIMIT 1[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` ORDER BY `products`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Update (1.5ms)[0m  [1m[33mUPDATE `products` SET `mark_price` = 5000.0, `updated_at` = '2019-04-07 06:49:21' WHERE `products`.`id` = 1[0m
+  [1m[35m (35.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'iPhoneX', '10% OFF', 2000.0, 1000.0, '2019-04-07 06:49:52', '2019-04-07 06:49:52')[0m
+  [1m[35m (70.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'Samsung', '10% OFF', 8000.0, 8500.0, '2019-04-07 06:50:40', '2019-04-07 06:50:40')[0m
+  [1m[35m (182.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'Samsung', '10% OFF', 8000.0, 8500.0, '2019-04-07 07:15:19', '2019-04-07 07:15:19')[0m
+  [1m[35m (65.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.7ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 1[0m
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 2[0m
+  [1m[35m (64.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 3[0m
+  [1m[35m (65.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.3ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 4[0m
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'Samsung', '20% OFF', 10000.0, 11500.0, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProductAttribute Create (0.4ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (5, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (65.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (1, 200.0, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (34.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (1, 300.0, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (69.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mProductAttribute Create (0.2ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (5, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (64.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProductAttributeOption Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (2, 100.0, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (30.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (2, 200.0, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (60.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mProductAttribute Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (5, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (63.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProductAttributeOption Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (3, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (30.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (3, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (29.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (3, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (36.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (5, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (37.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (4, '2019-04-07 07:16:12', '2019-04-07 07:16:12')[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (4, 250.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (37.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (4, 300.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (36.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'iPhone X', '10% OFF', 74000.0, 75800.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (27.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (6, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (57.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (5, 200.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (41.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (5, 300.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (59.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (6, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (36.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (6, 100.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (6, 200.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (36.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (6, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (36.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (35.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (36.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (36.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mProductAttribute Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (6, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (36.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (8, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (8, 250.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (42.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (8, 300.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (46.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'Oppo', '5% OFF', 8000.0, 8500.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (47.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (47.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mProductAttributeOption Create (0.9ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (9, 200.0, '2019-04-07 07:16:13', '2019-04-07 07:16:13')[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (46.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (9, 300.0, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (48.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mProductAttribute Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (47.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (10, 100.0, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (46.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mProductAttributeOption Create (0.2ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (10, 200.0, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (37.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mProductAttribute Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (49.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (11, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (47.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (11, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (48.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (48.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (12, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (47.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (12, 250.0, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (48.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (12, 300.0, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (48.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'MotoG', '15% OFF', 11700.0, 11900.0, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mProductAttribute Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (8, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (48.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (13, 200.0, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (48.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (13, 300.0, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (48.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:44
+  [1m[36mProductAttribute Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (8, '2019-04-07 07:16:14', '2019-04-07 07:16:14')[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (340.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mProductAttributeOption Create (0.2ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (14, 100.0, '2019-04-07 07:16:15', '2019-04-07 07:16:15')[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (66.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mProductAttributeOption Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (14, 200.0, '2019-04-07 07:16:15', '2019-04-07 07:16:15')[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (38.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (8, '2019-04-07 07:16:15', '2019-04-07 07:16:15')[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (223.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (15, '2019-04-07 07:16:15', '2019-04-07 07:16:15')[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (487.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mProductAttributeOption Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (15, '2019-04-07 07:16:15', '2019-04-07 07:16:15')[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (368.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mProductAttributeOption Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (15, '2019-04-07 07:16:16', '2019-04-07 07:16:16')[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (407.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mProductAttribute Create (0.2ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (8, '2019-04-07 07:16:16', '2019-04-07 07:16:16')[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (356.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (16, 150.0, '2019-04-07 07:16:17', '2019-04-07 07:16:17')[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (399.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mProductAttributeOption Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (16, 250.0, '2019-04-07 07:16:17', '2019-04-07 07:16:17')[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (347.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mProductAttributeOption Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (16, 300.0, '2019-04-07 07:16:17', '2019-04-07 07:16:17')[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (181.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'Redmi', '10% OFF', 10500.0, 10000.0, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (48.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:52
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (9, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (17, 200.0, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (48.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (17, 300.0, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (47.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:54
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (9, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (48.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (18, 100.0, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (47.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (18, 200.0, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (48.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:56
+  [1m[36mProductAttribute Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (9, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (19, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (48.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mProductAttributeOption Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (19, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (49.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (19, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (49.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:58
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (9, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (48.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (20, 20.0, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (47.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (20, 250.0, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (49.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (20, 300.0, '2019-04-07 07:16:18', '2019-04-07 07:16:18')[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (48.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m
+  [1m[36mProductAttribute Load (0.4ms)[0m  [1m[34mSELECT  `product_attributes`.* FROM `product_attributes` LIMIT 11[0m
+  [1m[36mProductAttributeOption Load (0.4ms)[0m  [1m[34mSELECT  `product_attribute_options`.* FROM `product_attribute_options` LIMIT 11[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  `products`.* FROM `products` LIMIT 11[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[36mProductAttribute Load (0.4ms)[0m  [1m[34mSELECT  `product_attributes`.* FROM `product_attributes` WHERE `product_attributes`.`product_id` = 5 LIMIT 11[0m
+  [1m[36mProductAttribute Load (1.0ms)[0m  [1m[34mSELECT  `product_attributes`.* FROM `product_attributes` WHERE `product_attributes`.`product_id` = 5 LIMIT 11[0m
+  [1m[36mProductAttribute Load (0.9ms)[0m  [1m[34mSELECT  `product_attributes`.* FROM `product_attributes` WHERE `product_attributes`.`product_id` = 5 LIMIT 11[0m
+  [1m[36mProductAttribute Load (1.1ms)[0m  [1m[34mSELECT `product_attributes`.* FROM `product_attributes` WHERE `product_attributes`.`product_id` = 5[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProductAttributeOption Load (0.4ms)[0m  [1m[34mSELECT  `product_attribute_options`.* FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 1 LIMIT 11[0m
+  [1m[36mProductAttributeOption Load (0.9ms)[0m  [1m[34mSELECT  `product_attribute_options`.* FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 1 LIMIT 11[0m
+  [1m[36mProductAttributeOption Load (1.1ms)[0m  [1m[34mSELECT `product_attribute_options`.* FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProductAttributeOption Load (1.0ms)[0m  [1m[34mSELECT  `product_attribute_options`.* FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 2 LIMIT 11[0m
+  [1m[36mProductAttributeOption Load (1.0ms)[0m  [1m[34mSELECT `product_attribute_options`.* FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 2[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProductAttributeOption Load (1.1ms)[0m  [1m[34mSELECT  `product_attribute_options`.* FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 3 LIMIT 11[0m
+  [1m[36mProductAttributeOption Load (1.1ms)[0m  [1m[34mSELECT `product_attribute_options`.* FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 3[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProductAttributeOption Load (0.9ms)[0m  [1m[34mSELECT  `product_attribute_options`.* FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 4 LIMIT 11[0m
+  [1m[36mProductAttributeOption Load (0.9ms)[0m  [1m[34mSELECT `product_attribute_options`.* FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 4[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  `products`.* FROM `products` ORDER BY `products`.`id` ASC LIMIT 1[0m
+  [1m[36mProductAttribute Load (1.1ms)[0m  [1m[34mSELECT  `product_attributes`.* FROM `product_attributes` WHERE `product_attributes`.`product_id` = 5 LIMIT 11[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `product_attributes`.`name` FROM `product_attributes` WHERE `product_attributes`.`product_id` = 5[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('6391644616934626140', 0)[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProductAttributeOptions (20190407053059)
+  [1m[35m (133.3ms)[0m  [1m[35mDROP TABLE `product_attribute_options`[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (332.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190407053059'[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('6391644616934626140')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6391644616934626140', 0)[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProductAttributes (20190407053025)
+  [1m[35m (133.4ms)[0m  [1m[35mDROP TABLE `product_attributes`[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (31.7ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20190407053025'[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('6391644616934626140')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6391644616934626140', 0)[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProductAttributes (20190407053025)
+  [1m[35m (890.4ms)[0m  [1m[35mCREATE TABLE `product_attributes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `attr_id` int, `attr_name` varchar(255), `product_id` bigint NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_product_attributes_on_product_id`  (`product_id`))[0m
+  ↳ db/migrate/20190407053025_create_product_attributes.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190407053025')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (63.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProductAttributeOptions (20190407053059)
+  [1m[35m (376.8ms)[0m  [1m[35mCREATE TABLE `product_attribute_options` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `option_id` int, `option_name` varchar(255), `product_attribute_id` bigint NOT NULL, `price` float(24) DEFAULT 0.0, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_product_attribute_options_on_product_attribute_id`  (`product_attribute_id`))[0m
+  ↳ db/migrate/20190407053059_create_product_attribute_options.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190407053059')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (30.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6391644616934626140')[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.8ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 5[0m
+  [1m[35m (37.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.5ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 6[0m
+  [1m[35m (64.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 7[0m
+  [1m[35m (64.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.6ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 8[0m
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.8ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 9[0m
+  [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'Samsung', '20% OFF', 10000.0, 11500.0, '2019-04-07 13:07:28', '2019-04-07 13:07:28')[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (29.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProductAttribute Create (0.2ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (10, '2019-04-07 13:07:28', '2019-04-07 13:07:28')[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (34.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mProductAttributeOption Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (1, 200.0, '2019-04-07 13:07:28', '2019-04-07 13:07:28')[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (27.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (1, 300.0, '2019-04-07 13:07:28', '2019-04-07 13:07:28')[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (59.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mProductAttribute Create (0.2ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (10, '2019-04-07 13:07:28', '2019-04-07 13:07:28')[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (63.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProductAttributeOption Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (2, 100.0, '2019-04-07 13:07:28', '2019-04-07 13:07:28')[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (2, 200.0, '2019-04-07 13:07:28', '2019-04-07 13:07:28')[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (58.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mProductAttribute Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (10, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (64.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (3, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (37.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (3, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (27.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (3, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (37.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mProductAttribute Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (10, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (27.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProductAttributeOption Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (4, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (26.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (4, 250.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProductAttributeOption Create (0.9ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (4, 300.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (35.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'iPhone X', '10% OFF', 74000.0, 75800.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (11, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (36.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (5, 200.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (35.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (5, 300.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (36.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (11, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (26.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (6, 100.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (35.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mProductAttributeOption Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (6, 200.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProductAttribute Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (11, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (28.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (36.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (7, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (11, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (37.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (8, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (36.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (8, 250.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (8, 300.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (27.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'Oppo', '5% OFF', 8000.0, 8500.0, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (27.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (12, '2019-04-07 13:07:29', '2019-04-07 13:07:29')[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (36.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (9, 200.0, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mProductAttributeOption Create (1.1ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (9, 300.0, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (37.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (12, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (37.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (10, 100.0, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (35.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mProductAttributeOption Create (1.0ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (10, 200.0, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (36.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (12, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (11, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (35.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (11, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (12, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (42.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (12, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (48.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (12, 250.0, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (12, 300.0, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (367.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'MotoG', '15% OFF', 11700.0, 11900.0, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (48.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (13, '2019-04-07 13:07:30', '2019-04-07 13:07:30')[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (13, 200.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (47.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (13, 300.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:44
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (13, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (47.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (14, 100.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (47.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (14, 200.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (64.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (13, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (48.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (15, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (48.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mProductAttributeOption Create (0.9ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (15, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (47.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (15, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (48.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (13, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (38.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (16, 150.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (47.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (16, 250.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (47.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (16, 300.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (48.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'Redmi', '10% OFF', 10500.0, 10000.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (48.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:52
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (14, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (47.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (17, 200.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (45.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (17, 300.0, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (48.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:54
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (14, '2019-04-07 13:07:31', '2019-04-07 13:07:31')[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (48.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mProductAttributeOption Create (1.0ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (18, 100.0, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (46.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (18, 200.0, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (47.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:56
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (14, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (48.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (19, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (80.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mProductAttributeOption Create (0.9ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (19, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (81.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mProductAttributeOption Create (0.4ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `created_at`, `updated_at`) VALUES (19, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:58
+  [1m[36mProductAttribute Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attributes` (`product_id`, `created_at`, `updated_at`) VALUES (14, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (47.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (20, 20.0, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (46.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (20, 250.0, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (48.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mProductAttributeOption Create (0.8ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES (20, 300.0, '2019-04-07 13:07:32', '2019-04-07 13:07:32')[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (48.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.6ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 10[0m
+  [1m[35m (41.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.8ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 11[0m
+  [1m[35m (63.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.3ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 12[0m
+  [1m[35m (64.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.7ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 13[0m
+  [1m[35m (30.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Destroy (0.9ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 14[0m
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProductAttribute Load (1.0ms)[0m  [1m[34mSELECT `product_attributes`.* FROM `product_attributes`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (1.0ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 1[0m
+  [1m[35m (34.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 2[0m
+  [1m[35m (29.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 3[0m
+  [1m[35m (73.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.3ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 4[0m
+  [1m[35m (64.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 5[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.9ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 6[0m
+  [1m[35m (28.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.9ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 7[0m
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.9ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 8[0m
+  [1m[35m (62.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (1.1ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 9[0m
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 10[0m
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (1.0ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 11[0m
+  [1m[35m (62.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.9ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 12[0m
+  [1m[35m (62.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 13[0m
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (1.1ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 14[0m
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.7ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 15[0m
+  [1m[35m (29.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.9ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 16[0m
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 17[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 18[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 19[0m
+  [1m[35m (30.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttribute Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attributes` WHERE `product_attributes`.`id` = 20[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProductAttributeOption Load (1.1ms)[0m  [1m[34mSELECT `product_attribute_options`.* FROM `product_attribute_options`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 1[0m
+  [1m[35m (39.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 2[0m
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.7ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 3[0m
+  [1m[35m (29.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 4[0m
+  [1m[35m (29.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.7ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 5[0m
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 6[0m
+  [1m[35m (1727.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.2ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 7[0m
+  [1m[35m (284.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (142.4ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 8[0m
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 9[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.7ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 10[0m
+  [1m[35m (29.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.7ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 11[0m
+  [1m[35m (30.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 12[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 13[0m
+  [1m[35m (41.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.9ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 14[0m
+  [1m[35m (29.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 15[0m
+  [1m[35m (29.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 16[0m
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 17[0m
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 18[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 19[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 20[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 21[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 22[0m
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 23[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.7ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 24[0m
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 25[0m
+  [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 26[0m
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 27[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 28[0m
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 29[0m
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 30[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 31[0m
+  [1m[35m (61.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.9ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 32[0m
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 33[0m
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 34[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 35[0m
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 36[0m
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 37[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 38[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 39[0m
+  [1m[35m (35.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 40[0m
+  [1m[35m (36.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 41[0m
+  [1m[35m (41.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 42[0m
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.9ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 43[0m
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 44[0m
+  [1m[35m (41.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.5ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 45[0m
+  [1m[35m (41.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (1.0ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 46[0m
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.8ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 47[0m
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.6ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 48[0m
+  [1m[35m (52.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProductAttributeOption Destroy (0.9ms)[0m  [1m[31mDELETE FROM `product_attribute_options` WHERE `product_attribute_options`.`id` = 49[0m
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/komalpc/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO `products` (`description`, `uniq_id`, `name`, `sale_msg`, `sale_price`, `mark_price`, `created_at`, `updated_at`) VALUES ('dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk', '5aesssfgd6d0', 'Samsung', '20% OFF', 10000.0, 11500.0, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProductAttribute Create (0.3ms)[0m  [1m[32mINSERT INTO `product_attributes` (`attr_name`, `product_id`, `created_at`, `updated_at`) VALUES ('storage', 15, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (33.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mProductAttributeOption Create (0.4ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES ('64 GB', 21, 200.0, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (36.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES ('32 GB', 21, 300.0, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (58.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mProductAttribute Create (0.2ms)[0m  [1m[32mINSERT INTO `product_attributes` (`attr_name`, `product_id`, `created_at`, `updated_at`) VALUES ('internal memory', 15, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (64.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES ('2 GB', 22, 100.0, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (37.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES ('4 GB', 22, 200.0, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (59.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mProductAttribute Create (0.2ms)[0m  [1m[32mINSERT INTO `product_attributes` (`attr_name`, `product_id`, `created_at`, `updated_at`) VALUES ('color', 15, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (64.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProductAttributeOption Create (0.5ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `created_at`, `updated_at`) VALUES ('Red', 23, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (27.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `created_at`, `updated_at`) VALUES ('Green', 23, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (37.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `created_at`, `updated_at`) VALUES ('Gold', 23, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (36.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mProductAttribute Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attributes` (`attr_name`, `product_id`, `created_at`, `updated_at`) VALUES ('battery Backup', 15, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (26.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `created_at`, `updated_at`) VALUES ('64 GB', 24, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (37.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProductAttributeOption Create (0.6ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES ('1 Hour', 24, 250.0, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (37.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProductAttributeOption Create (0.7ms)[0m  [1m[32mINSERT INTO `product_attribute_options` (`option_name`, `product_attribute_id`, `price`, `created_at`, `updated_at`) VALUES ('2 Hour', 24, 300.0, '2019-04-07 13:11:10', '2019-04-07 13:11:10')[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (36.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  `products`.* FROM `products` ORDER BY `products`.`id` ASC LIMIT 1[0m
+  [1m[36mProductAttribute Load (1.1ms)[0m  [1m[34mSELECT  `product_attributes`.* FROM `product_attributes` WHERE `product_attributes`.`product_id` = 15 LIMIT 11[0m
+  [1m[36mProductAttribute Load (1.0ms)[0m  [1m[34mSELECT `product_attributes`.* FROM `product_attributes` WHERE `product_attributes`.`product_id` = 15[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `product_attribute_options`.`name` FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 21[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `product_attribute_options`.`name` FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 21[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `option_name` FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 21[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `option_name` FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 22[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `option_name` FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 23[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `option_name` FROM `product_attribute_options` WHERE `product_attribute_options`.`product_attribute_id` = 24[0m
