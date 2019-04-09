@@ -7,7 +7,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
     	t.string :sale_msg
     	t.float :sale_price, default: 0 
     	t.float :mark_price, default: 0
-    	t.text :images
       t.timestamps
     end
   end

@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
-	has_many :product_attributes
-
+	has_many :prod_attrs
+	has_many :variants
+	
 	def purchasables
 		
 	end
