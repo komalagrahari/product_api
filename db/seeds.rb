@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 p1 = Product.create(description: "dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk", uniq_id: "5aesssfgd6d0", name: "Samsung", sale_msg: "20% OFF", sale_price: 10000, mark_price: 11500)
-pa1 = p1.product_attributes.create(attr_name: "storage")
-pao1 = pa1.product_attribute_options.create([{option_name: "64 GB", price: 200}, {option_name: "32 GB", price: 300}]) 
-pa2 = p1.product_attributes.create(attr_name: "internal memory")
-pao2 = pa2.product_attribute_options.create([{option_name: "2 GB", price: 100}, {option_name: "4 GB", price: 200}]) 
-pa3 = p1.product_attributes.create(attr_name: "color")
-pao3 = pa3.product_attribute_options.create([{option_name: "Red"}, {option_name: "Green", price: 0}, {option_name: "Gold", price: 0}]) 
-pa4 = p1.product_attributes.create(attr_name: "battery Backup")
-pao4 = pa4.product_attribute_options.create([{option_name: "64 GB"}, {option_name: "1 Hour", price: 250}, {option_name: "2 Hour", price: 300}]) 
+pa1 = p1.prod_attrs.create(attr_name: "storage")
+pao1 = pa1.attr_opts.create([{option_name: "64 GB"}, {option_name: "32 GB"}]) 
+pa2 = p1.prod_attrs.create(attr_name: "internal memory")
+pao2 = pa2.attr_opts.create([{option_name: "2 GB"}, {option_name: "4 GB"}]) 
+pa3 = p1.prod_attrs.create(attr_name: "color")
+pao3 = pa3.attr_opts.create([{option_name: "Red"}, {option_name: "Green"}, {option_name: "Gold"}]) 
+pa4 = p1.prod_attrs.create(attr_name: "battery Backup")
+pao4 = pa4.attr_opts.create([{option_name: "64 GB"}, {option_name: "1 Hour"}, {option_name: "2 Hour"}]) 
 
 
 
