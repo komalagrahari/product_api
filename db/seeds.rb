@@ -9,12 +9,42 @@
 p1 = Product.create(description: "dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk", uniq_id: "5aesssfgd6d0", name: "Samsung", sale_msg: "20% OFF", sale_price: 10000, mark_price: 11500)
 pa1 = p1.prod_attrs.create(attr_name: "storage")
 pao1 = pa1.attr_opts.create([{option_name: "64 GB"}, {option_name: "32 GB"}]) 
-pa2 = p1.prod_attrs.create(attr_name: "internal memory")
-pao2 = pa2.attr_opts.create([{option_name: "2 GB"}, {option_name: "4 GB"}]) 
 pa3 = p1.prod_attrs.create(attr_name: "color")
 pao3 = pa3.attr_opts.create([{option_name: "Red"}, {option_name: "Green"}, {option_name: "Gold"}]) 
-pa4 = p1.prod_attrs.create(attr_name: "battery Backup")
-pao4 = pa4.attr_opts.create([{option_name: "64 GB"}, {option_name: "1 Hour"}, {option_name: "2 Hour"}]) 
+ 
+# product variant count = 2 x 3
+v = p1.variants.create([{var_sale_price: 10500, var_mark_price: 12000}, {var_sale_price: 9500, var_mark_price: 10500}, {var_sale_price: 8500, var_mark_price: 9500}, {var_sale_price: 11500, var_mark_price: 12000}, {var_sale_price: 13500, var_mark_price: 14000}, {var_sale_price: 8750, var_mark_price: 9477}])
+
+v[0].variant_attr_opts.create([{ attr_opt_id: pao1[0].id}, { attr_opt_id: pao3[0].id}])
+v[0].var_name = "#{p1.name} #{v[0].attr_opts.pluck(:option_name).join(' ')}"
+v[0].save
+
+v[1].variant_attr_opts.create([{ attr_opt_id: pao1[0].id}, { attr_opt_id: pao3[1].id}])
+v[1].var_name = "#{p1.name} #{v[1].attr_opts.pluck(:option_name).join(' ')}"
+v[1].save
+
+v[2].variant_attr_opts.create([{ attr_opt_id: pao1[0].id}, { attr_opt_id: pao3[2].id}])
+v[2].var_name = "#{p1.name} #{v[2].attr_opts.pluck(:option_name).join(' ')}"
+v[2].save
+
+v[3].variant_attr_opts.create([{ attr_opt_id: pao1[1].id}, { attr_opt_id: pao3[0].id}])
+v[3].var_name = "#{p1.name} #{v[3].attr_opts.pluck(:option_name).join(' ')}"
+v[3].save
+
+v[4].variant_attr_opts.create([{ attr_opt_id: pao1[1].id}, { attr_opt_id: pao3[1].id}])
+v[4].var_name = "#{p1.name} #{v[4].attr_opts.pluck(:option_name).join(' ')}"
+v[4].save
+
+v[5].variant_attr_opts.create([{ attr_opt_id: pao1[1].id}, { attr_opt_id: pao3[2].id}])
+v[5].var_name = "#{p1.name} #{v[5].attr_opts.pluck(:option_name).join(' ')}"
+v[5].save
+
+
+# AttrOpt.delete_all
+# ProdAttr.destroy_all
+# Product.destroy_all
+# Variant.delete_all
+# VariantAttrOpt.delete_all
 
 
 

@@ -1,5 +1,6 @@
 class AttrOpt < ApplicationRecord
-	belongs_to :product_attribute
-	has_and_belongs_to_many :variants
-	attr_accessor :name, :uniq_id, :product_attribute_id
+	belongs_to :prod_attr
+	has_many :variant_attr_opts
+	has_many :variants, through: :variant_attr_opts
+	attr_accessor :name, :uniq_id, :prod_attr_id
 end
