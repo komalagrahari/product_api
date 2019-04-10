@@ -28,3 +28,8 @@ rake db:create
 if you find - FATAL: Listen error: unable to monitor directories for changes, use the below command in terminal - 
 
 echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
+
+
+rake db:migrate
+rake db:seed 
+-- this will create all testing data
