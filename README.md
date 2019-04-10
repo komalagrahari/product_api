@@ -33,3 +33,9 @@ echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-wat
 rake db:migrate
 rake db:seed 
 -- this will create all testing data
+
+Get Specific Product - 
+http://localhost:3000/api/purchasables/<id>
+
+Get All Products - 
+http://localhost:3000/api/purchasables 
