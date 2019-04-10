@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+base_path = "#{Rails.root}/public/"
 p1 = Product.create(description: "dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk", uniq_id: "5aesssfgd6d0", name: "Samsung", sale_msg: "20% OFF", sale_price: 10000, mark_price: 11500)
+p1.pictures.create([{picture_name: "#{base_path}samsung.jpeg"}, {picture_name: "#{base_path}samsung2.jpeg"}])
 pa1 = p1.prod_attrs.create(attr_name: "storage")
 pao1 = pa1.attr_opts.create([{option_name: "64 GB"}, {option_name: "32 GB"}]) 
 pa3 = p1.prod_attrs.create(attr_name: "color")
@@ -16,28 +17,38 @@ pao3 = pa3.attr_opts.create([{option_name: "Red"}, {option_name: "Green"}, {opti
 v = p1.variants.create([{var_sale_price: 10500, var_mark_price: 12000}, {var_sale_price: 9500, var_mark_price: 10500}, {var_sale_price: 8500, var_mark_price: 9500}, {var_sale_price: 11500, var_mark_price: 12000}, {var_sale_price: 13500, var_mark_price: 14000}, {var_sale_price: 8750, var_mark_price: 9477}])
 
 v[0].variant_attr_opts.create([{ attr_opt_id: pao1[0].id}, { attr_opt_id: pao3[0].id}])
-v[0].var_name = "#{p1.name} #{v[0].attr_opts.pluck(:option_name).join(' ')}"
+v[0].var_name = "#{p1.name} (#{v[0].attr_opts.pluck(:option_name).join(' ')})"
 v[0].save
+v[0].pictures.create(picture_name: "#{base_path}samsung_64gb_red.jpeg" )
 
 v[1].variant_attr_opts.create([{ attr_opt_id: pao1[0].id}, { attr_opt_id: pao3[1].id}])
-v[1].var_name = "#{p1.name} #{v[1].attr_opts.pluck(:option_name).join(' ')}"
+v[1].var_name = "#{p1.name} (#{v[1].attr_opts.pluck(:option_name).join(' ')})"
 v[1].save
+v[1].pictures.create(picture_name: "#{base_path}samsung_64gb_green.jpeg")
+
 
 v[2].variant_attr_opts.create([{ attr_opt_id: pao1[0].id}, { attr_opt_id: pao3[2].id}])
-v[2].var_name = "#{p1.name} #{v[2].attr_opts.pluck(:option_name).join(' ')}"
+v[2].var_name = "#{p1.name} (#{v[2].attr_opts.pluck(:option_name).join(' ')})"
 v[2].save
+v[2].pictures.create(picture_name: "#{base_path}samsung_64gb_gold.jpeg")
+
 
 v[3].variant_attr_opts.create([{ attr_opt_id: pao1[1].id}, { attr_opt_id: pao3[0].id}])
-v[3].var_name = "#{p1.name} #{v[3].attr_opts.pluck(:option_name).join(' ')}"
+v[3].var_name = "#{p1.name} (#{v[3].attr_opts.pluck(:option_name).join(' ')})"
 v[3].save
+v[3].pictures.create(picture_name: "#{base_path}samsung_32gb_red.jpeg")
+
 
 v[4].variant_attr_opts.create([{ attr_opt_id: pao1[1].id}, { attr_opt_id: pao3[1].id}])
-v[4].var_name = "#{p1.name} #{v[4].attr_opts.pluck(:option_name).join(' ')}"
+v[4].var_name = "#{p1.name} (#{v[4].attr_opts.pluck(:option_name).join(' ')})"
 v[4].save
+v[4].pictures.create(picture_name: "#{base_path}samsung_32gb_green.jpeg")
+
 
 v[5].variant_attr_opts.create([{ attr_opt_id: pao1[1].id}, { attr_opt_id: pao3[2].id}])
-v[5].var_name = "#{p1.name} #{v[5].attr_opts.pluck(:option_name).join(' ')}"
+v[5].var_name = "#{p1.name} (#{v[5].attr_opts.pluck(:option_name).join(' ')})"
 v[5].save
+v[5].pictures.create(picture_name: "#{base_path}samsung_32gb_gold.jpeg")
 
 
 # AttrOpt.delete_all
@@ -46,6 +57,19 @@ v[5].save
 # Variant.delete_all
 # VariantAttrOpt.delete_all
 
+# p1 = Product.first
+# pa1 = p1.prod_attrs[0]
+# pao1 = pa1.attr_opts
+# pa3 = p1.prod_attrs[0]
+
+# pao3 = pa3.attr_opts
+
+# v = p1.variants.create([{var_sale_price: 10500, var_mark_price: 12000}, {var_sale_price: 9500, var_mark_price: 10500}, {var_sale_price: 8500, var_mark_price: 9500}, {var_sale_price: 11500, var_mark_price: 12000}, {var_sale_price: 13500, var_mark_price: 14000}, {var_sale_price: 8750, var_mark_price: 9477}])
+
+
+# v[0].variant_attr_opts.create([{ attr_opt_id: pao1[0].id}, { attr_opt_id: pao3[0].id}])
+# v[0].var_name = "#{p1.name} #{v[0].attr_opts.pluck(:option_name).join(' ')}"
+# v[0].save
 
 
 # p2 = Product.create(description: "dsdsd dsdsf dwdwdw fgfgh lsldklkm lkjlkop dsklk", uniq_id: "5aesssfgd6d0", name: "iPhone X", sale_msg: "10% OFF", sale_price: 74000, mark_price: 75800)

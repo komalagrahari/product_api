@@ -6,7 +6,7 @@ json.products @products.each do |p|
 		json.desc p.description
 		json.images p.pictures
 	else
-		variants.each do |v|
+		json.array variants.each do |v|
 			json.extract! v, :id
 			json.name v.var_name
 			json.sale_price v.var_sale_price
